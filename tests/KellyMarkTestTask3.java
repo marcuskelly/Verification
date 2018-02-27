@@ -413,15 +413,15 @@ public class KellyMarkTestTask3 {
 
     // Test 8 - Check Visitor kind rate
     @org.junit.Test
-    public void checkVisitorRate() {
+    public void checkVisitorRateFirstTenFree() {
         Rate rate = new Rate(CarParkKind.VISITOR, BigDecimal.valueOf(5), BigDecimal.valueOf(2), discountPeriods, normalPeriods);
-        Period periodStay = new Period(9,12);
-        assertTrue(new BigDecimal(2.5).compareTo(rate.calculate(periodStay)) == 0);
+        Period periodStay = new Period(9,11);
+        assertTrue(new BigDecimal(0).compareTo(rate.calculate(periodStay)) == 0);
     }
 
     // Test 9 - Check Visitor kind rate
     @org.junit.Test
-    public void checkVisitorRate1() {
+    public void checkVisitorRateOverTenDiscount() {
         Rate rate = new Rate(CarParkKind.VISITOR, BigDecimal.valueOf(5), BigDecimal.valueOf(2), discountPeriods, normalPeriods);
         Period periodStay = new Period(9,12);
         assertTrue(new BigDecimal(2.5).compareTo(rate.calculate(periodStay)) == 0);
